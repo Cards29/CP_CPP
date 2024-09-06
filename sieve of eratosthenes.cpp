@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long int;
+typedef long long ll;
 typedef vector<int> vi;
 typedef set<int> si;
 

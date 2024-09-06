@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long int;
-typedef pair<int, int> pi;
-typedef vector<int> vi;
+typedef long long ll;
+typedef pair<ll, ll> pi;
+typedef vector<ll> vi;
 typedef vector<pi> vpi;
 
 #define cy cout << "YES\n"
@@ -11,8 +11,8 @@ typedef vector<pi> vpi;
 
 const int MOD = 1e9 + 7;
 
-inline int binpow(int a, int b) {
-    int res = 1;
+inline ll binpow(ll a, ll b) {
+    ll res = 1;
     while (b > 0) {
         if (b & 1)
             res = res * a;
@@ -22,23 +22,23 @@ inline int binpow(int a, int b) {
     return res;
 }
 
-const int N = 1e7 + 20;
-int prime_index = 3000;
+const ll N = 1e7 + 20;
+ll prime_index = 3000;
 vector<bool> is_prime(prime_index + 1, true);
 inline void sieve() {
     is_prime[0] = is_prime[1] = false;
 
-    for (int i = 2; i * i <= prime_index; i++) {
+    for (ll i = 2; i * i <= prime_index; i++) {
         if (is_prime[i]) {
-            for (int j = i * i; j <= prime_index; j += i)
+            for (ll j = i * i; j <= prime_index; j += i)
                 is_prime[j] = false;
         }
     }
 }
 
-long long int decimalToBinary(int n) {
-    long long int binaryNum = 0;
-    int remainder, i = 1;
+long long ll decimalToBinary(ll n) {
+    long long ll binaryNum = 0;
+    ll remainder, i = 1;
 
     while (n != 0) {
         remainder = n % 2;
@@ -50,12 +50,12 @@ long long int decimalToBinary(int n) {
     return binaryNum;
 }
 
-int binaryToDecimal(long long int binaryNum) {
-    int decimalNum = 0, power = 0;
+ll binaryToDecimal(long long ll binaryNum) {
+    ll decimalNum = 0, power = 0;
 
     // Iterating through each digit of the binary number
     while (binaryNum != 0) {
-        int digit = binaryNum % 10;          // Extracting the last digit
+        ll digit = binaryNum % 10;          // Extracting the last digit
         decimalNum += digit * pow(2, power); // Adding to the decimal number
         binaryNum /= 10;                     // Removing the last digit
         power++;                             // Incrementing the power of 2
@@ -75,7 +75,7 @@ signed main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int t = 1;
+    ll t = 1;
     cin >> t;
     while (t--)
         solve();
