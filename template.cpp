@@ -2,7 +2,7 @@
 using namespace std;
 
 typedef long long ll;
-typedef pair<ll, ll> pi;
+typedef pair<ll,ll> pi;
 typedef vector<ll> vi;
 typedef vector<pi> vpi;
 
@@ -36,8 +36,8 @@ inline void sieve() {
     }
 }
 
-long long ll decimalToBinary(ll n) {
-    long long ll binaryNum = 0;
+ll decimalToBinary(ll n) {
+    ll binaryNum = 0;
     ll remainder, i = 1;
 
     while (n != 0) {
@@ -50,7 +50,7 @@ long long ll decimalToBinary(ll n) {
     return binaryNum;
 }
 
-ll binaryToDecimal(long long ll binaryNum) {
+ll binaryToDecimal(ll binaryNum) {
     ll decimalNum = 0, power = 0;
 
     // Iterating through each digit of the binary number
