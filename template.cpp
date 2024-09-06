@@ -67,7 +67,6 @@ ll binaryToDecimal(long long ll binaryNum) {
 //------------------------------------------------Soln-------------------------------------------
 inline void solve() {
 
-
 }
 
 signed main() {
