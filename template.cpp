@@ -5,14 +5,7 @@ typedef long long int;
 typedef pair<int, int> pi;
 typedef vector<int> vi;
 typedef vector<pi> vpi;
-typedef vector<vi> vvi;
-typedef set<int> si;
 
-#define pb push_back
-#define pob pop_back
-#define fir(n) for (ll i = 0; i < n; i++)
-#define _ << ' ' <<
-#define all(v) v.begin(), v.end()
 #define cy cout << "YES\n"
 #define cn cout << "NO\n"
 
