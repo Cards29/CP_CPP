@@ -11,7 +11,7 @@ typedef vector<pi> vpi;
 
 const int MOD = 1e9 + 7;
 
-inline ll binpow(ll a, ll b) {
+ll binpow(ll a, ll b) {
     ll res = 1;
     while (b > 0) {
         if (b & 1)
@@ -36,7 +36,7 @@ inline void sieve() {
     }
 }
 
-inline ll decimalToBinary(ll n) {
+ll decimalToBinary(ll n) {
     ll binaryNum = 0;
     ll remainder, i = 1;
 
@@ -50,7 +50,7 @@ inline ll decimalToBinary(ll n) {
     return binaryNum;
 }
 
-inline ll binaryToDecimal(ll binaryNum) {
+ll binaryToDecimal(ll binaryNum) {
     ll decimalNum = 0, power = 0;
 
     // Iterating through each digit of the binary number
@@ -65,7 +65,7 @@ inline ll binaryToDecimal(ll binaryNum) {
 }
 
 //------------------------------------------------Soln-------------------------------------------
-inline void solve() {
+void solve() {
 
 }
 
