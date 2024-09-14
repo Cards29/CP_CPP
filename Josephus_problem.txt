@@ -1,0 +1,7 @@
+if the number of people is 2^a+l,
+the last one to survive will be 2*l+1.
+
+BECAUSE,
+we need to have a power of 2, after l people is killed,
+we'll get a power of 2, after l people is killed the position 
+of the next person is 2*l+1
