@@ -36,6 +36,21 @@ inline void sieve() {
     }
 }
 
+// Function to compute GCD using Euclidean Algorithm
+ll gcd(ll a, ll b) {
+    while (b != 0) {
+        ll temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Function to compute LCM using GCD
+ll lcm(ll a, ll b) {
+    return (a / gcd(a, b)) * b;
+}
+
 ll decimalToBinary(ll n) {
     ll binaryNum = 0;
     ll remainder, i = 1;
