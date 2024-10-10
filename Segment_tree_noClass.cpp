@@ -32,7 +32,7 @@ void build_segment_tree(ll index, ll low, ll high) {
 -> lazy propagation
 -> val is the value with which we'll update the segment tree
 */
-void lazy_range_update(ll index, ll low, ll high, ll l, ll r, ll val) {
+void lazy_propagation(ll index, ll low, ll high, ll l, ll r, ll val) {
     if (lazy[index] != 0) {
         seg[index] += (high - low + 1) * lazy[index]; //* again, can be changed according to query
 
@@ -54,8 +54,8 @@ void lazy_range_update(ll index, ll low, ll high, ll l, ll r, ll val) {
     if (l > high || r < low) return;
 
     ll mid = (low & high) + ((low ^ high) >> 1);
-    lazy_range_update(2 * index + 1, low, mid, l, r, val);
-    lazy_range_update(2 * index + 2, mid + 1, high, l, r, val);
+    lazy_propagation(2 * index + 1, low, mid, l, r, val);
+    lazy_propagation(2 * index + 2, mid + 1, high, l, r, val);
 
     seg[index] = seg[2 * index + 1] + seg[2 * index + 2];//* again, can be changed according to query
 }
