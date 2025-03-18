@@ -46,7 +46,7 @@ private:
             exit(1);
         }
     }
-    
+
 public:
     segmentTree(const vector<ll>& v) : vec(v) {
         size = v.size();
@@ -83,7 +83,17 @@ public:
         seg[index] = merge(seg[2 * index + 1], seg[2 * index + 2]);
     }
 
-    ll query(ll index, ll low, ll high, ll l, ll r) const {
+    ll query(ll index, ll low, ll high, ll l, ll r) {
+        // check if we have any lazy update
+        if (lazy[index] != 0) {
+            seg[index] += (high - low + 1) * lazy[index];
+            if (low != high) {
+                lazy[2 * index + 1] += lazy[index];
+                lazy[2 * index + 2] += lazy[index];
+            }
+            lazy[index] = 0;
+        }
+
         // if completely lies
         if (low >= l && high <= r) return seg[index];
 
@@ -107,8 +117,8 @@ public:
         if (lazy[index] != 0) {
             seg[index] += (high - low + 1) * lazy[index];
             if (low != high) {
-                lazy[2 * index + 1] = lazy[index];
-                lazy[2 * index + 2] = lazy[index];
+                lazy[2 * index + 1] += lazy[index];
+                lazy[2 * index + 2] += lazy[index];
 
             }
             lazy[index] = 0;
@@ -142,7 +152,7 @@ public:
         build(index, low, high);
     }
 
-    ll query(ll l, ll r) const {
+    ll query(ll l, ll r) {
         // for 0 indexed range query
         ll index = 0, low = 0, high = vec.size() - 1;
         return query(index, low, high, l, r);
