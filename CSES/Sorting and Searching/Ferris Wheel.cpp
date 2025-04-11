@@ -20,33 +20,26 @@ void solve(ll tc) {
     for (auto& i : v) cin >> i;
 
     sort(v.begin(), v.end());
-    // for (auto i : v) cout << i << ' ';
-    // cout << endl;
-    // for (auto i : v1)  cout << i << ' ';
-    // cout << endl;
-
-
 
     ll i = 0, j = n - 1, count = 0;
-    while (i < n && j >= 0 && i < j) {
-        if ((v[i] + v[j]) <= x) {
-            // cout << v[i] << ' '  << v[j] << ' ' << count << " yo1\n";
+
+    while (i <= j) {
+        if (i == j) {
+            count++;
+            break;
+        }
+        else if (v[i] + v[j] <= x) {
             i++;
             j--;
             count++;
         }
         else {
-            // cout << v[i] << ' '  << v[j] << ' ' << count << " yo2\n";
             j--;
             count++;
         }
     }
-    if (i == j) {
-        count++;
-    }
 
     cout << count << endl;
-
 }
 
 int main() {
