@@ -6,7 +6,7 @@ typedef vector <ll> vi;
 typedef pair <ll, ll> pi;
 typedef vector <pi> vpi;
 
-// ----------------------------soln----------------------------
+/* ================ actual code starts here ================ */
 
 void dijkstra(ll start, vector <vpi>& adjList, vector <ll>& d) {
     priority_queue <pi, vpi, greater<pi>> pq;
