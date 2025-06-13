@@ -13,7 +13,6 @@ typedef deque<int> di;
 #define cy cout<<"Yes"
 #define cn cout<<"No"
 
-//------------------------------------------yohohohohohoho------------------------------------------//
 
 void addLargeNumbers(const string &num1,const string &num2)
 {
